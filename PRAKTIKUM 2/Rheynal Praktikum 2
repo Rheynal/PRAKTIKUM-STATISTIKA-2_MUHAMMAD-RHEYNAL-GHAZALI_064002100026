@@ -1,0 +1,19 @@
+library(RMySQL)
+con = dbConnect(MySQL(), user = 'root', password = '', dbname = 'ps2rheynal', host = 'localhost')
+dbListTables(con) 
+myQuery <- "select * from data_rheynal;"
+df <- dbGetQuery(con, myQuery)
+
+library(dplyr)
+df<-filter(df,Brick=="No")
+print(df)
+
+library(RMySQL)
+con = dbConnect(MySQL(), user = 'root', password = '', dbname = 'ps2rheynal', host = 'localhost')
+dbListTables(con) 
+myQuery <- "select * from data_rheynal;"
+df <- dbGetQuery(con, myQuery)
+
+library(dplyr)
+df<-filter(df,Gender=="L")
+print(df)
